@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/t_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Ankara, Cankaya, Kavaklidere mahallesi, Bagis sokak"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:visibility="gone"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/t_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="24.08.2021 17:35:24"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/t_address"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/black"
+        android:textSize="14sp"/>
+
+    <Button
+        android:id="@+id/b_play"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Play"
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        android:backgroundTint="@android:color/holo_red_dark"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/t_date"
+        android:textAllCaps="false"
+        android:visibility="gone"
+        android:layout_marginTop="10dp"/>
+
+    <Button
+        android:id="@+id/b_close"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Close"
+        android:visibility="gone"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:backgroundTint="@android:color/darker_gray"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/b_play"
+        android:textAllCaps="false"/>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="@color/colorGrayLight"
+        android:background="@drawable/rounded_background"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view_stick"/>
+
+    <TextView
+        android:id="@+id/t_createNewRecord"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Yeni Ses Kaydı Oluştur"
+        app:layout_constraintLeft_toLeftOf="@+id/view"
+        app:layout_constraintRight_toLeftOf="@+id/cardview_add"
+        app:layout_constraintTop_toTopOf="@id/view"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="10dp"
+        android:textSize="14sp"
+        android:fontFamily="@font/open_sans_bold"
+        android:textColor="@color/colorTextPrimary"/>
+
+    <TextView
+        android:id="@+id/t_newRecordDetail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Bu lokasyona yeni ses kaydı ekle"
+        app:layout_constraintLeft_toLeftOf="@+id/t_createNewRecord"
+        app:layout_constraintRight_toLeftOf="@+id/cardview_add"
+        app:layout_constraintBottom_toBottomOf="@id/view"
+        android:layout_marginBottom="20dp"
+        android:layout_marginRight="10dp"
+        android:textColor="@color/colorTextSecondary"
+        android:fontFamily="@font/open_sans_bold"
+        android:textSize="14sp"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardview_add"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintRight_toRightOf="@id/view"
+        app:layout_constraintTop_toTopOf="@+id/view"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        android:layout_marginRight="20dp"
+        app:cardBackgroundColor="@color/colorRedLight"
+        app:cardCornerRadius="50dp">
+
+        <ImageView
+            android:id="@+id/i_add"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            android:src="@drawable/ic_add"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <View
+        android:id="@+id/view_stick"
+        android:layout_width="30dp"
+        android:layout_height="5dp"
+        android:background="@color/colorGrayLight"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="10dp"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/t_sesKayitlari"/>
+
+    <TextView
+        android:id="@+id/t_sesKayitlari"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ses Kayıtları"
+        android:fontFamily="@font/open_sans_bold"
+        android:textSize="18sp"
+        android:textColor="@color/colorTextPrimary"
+        android:layout_marginTop="10dp"
+        app:layout_constraintLeft_toLeftOf="@+id/view"
+        app:layout_constraintTop_toBottomOf="@+id/view"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

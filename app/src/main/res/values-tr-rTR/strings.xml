@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Your Voice</string>
+    <string name="main_page_title">Senin Sesin</string>
+
+    <!-- ActivityLogin Page -->
+    <string name="ActivityLogin_sign_in">Giriş</string>
+    <string name="ActivityLogin_sign_in_button">GİRİŞ</string>
+    <string name="ActivityLogin_welcome_back">Hoş geldiniz!</string>
+    <string name="ActivityLogin_username">Kullanıcı adı</string>
+    <string name="ActivityLogin_password">Şifre</string>
+    <string name="ActivityLogin_or">ya da</string>
+    <string name="ActivityLogin_sign_up">Kayıt ol</string>
+    <string name="ActivityLogin_forgot_password">Şifreni unuttun?</string>
+
+    <!-- ActivityRegister Page -->
+    <string name="ActivityRegister_sign_up">Kayıt ol</string>
+    <string name="ActivityRegister_sign_up_button">KAYIT OL</string>
+    <string name="ActivityRegister_welcome_back">Hoş geldiniz!</string>
+    <string name="ActivityRegister_username">Kullanıcı adı</string>
+    <string name="ActivityRegister_password">Şifre</string>
+    <string name="ActivityRegister_password_confirm">Şifre tekrarı</string>
+    <string name="ActivityRegister_or">ya da</string>
+    <string name="ActivityRegister_sign_in">Giriş</string>
+
+</resources>

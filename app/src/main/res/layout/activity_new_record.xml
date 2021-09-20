@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.ActivityNewRecord">
+
+    <ImageView
+        android:id="@+id/i_back"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/ic_back"
+        android:layout_margin="20dp"
+        android:onClick="clickBack"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/t_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Yeni Ses Kaydı"
+        app:layout_constraintLeft_toLeftOf="@+id/i_back"
+        app:layout_constraintTop_toBottomOf="@+id/i_back"
+        android:textSize="20sp"
+        android:visibility="gone"
+        android:fontFamily="@font/open_sans_bold"
+        android:textColor="@color/colorGreen1"
+        android:layout_marginTop="20dp"/>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/t_title"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rounded_background"
+        android:backgroundTint="@color/colorGrayLight2"/>
+
+    <TextView
+        android:id="@+id/t_yeniSesKaydi"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Yeni Ses Kaydı"
+        android:textColor="@color/colorTextPrimary"
+        android:fontFamily="@font/open_sans_bold"
+        android:gravity="center"
+        android:textSize="16sp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toTopOf="@+id/view"
+        app:layout_constraintLeft_toLeftOf="@+id/view"
+        app:layout_constraintRight_toRightOf="@id/view"/>
+
+    <TextView
+        android:id="@+id/t_yeniSesKaydiDetay"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Ses kayıtları en fazla 30 saniye olabilir"
+        android:textColor="@color/colorTextPrimary"
+        android:fontFamily="@font/open_sans_bold"
+        android:gravity="center"
+        android:textSize="12sp"
+        android:layout_marginTop="5dp"
+        android:alpha="0.6"
+        app:layout_constraintTop_toBottomOf="@+id/t_yeniSesKaydi"
+        app:layout_constraintLeft_toLeftOf="@+id/view"
+        app:layout_constraintRight_toRightOf="@id/view"/>
+
+    <SeekBar
+        android:id="@+id/seekbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="@id/t_yeniSesKaydi"
+        app:layout_constraintTop_toBottomOf="@+id/t_yeniSesKaydiDetay"
+        app:layout_constraintBottom_toTopOf="@+id/v1"
+        app:layout_constraintRight_toRightOf="@+id/t_yeniSesKaydi"
+        android:thumbTint="@color/colorTextPrimary"
+        android:progressBackgroundTint="@color/colorTextPrimary"
+        android:layout_marginTop="20dp"/>
+
+    <View
+        android:id="@+id/v1"
+        android:layout_width="wrap_content"
+        android:layout_height="0.001dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/t_yeniSesKaydi"
+        app:layout_constraintBottom_toTopOf="@+id/linear"/>
+
+    <TextView
+        android:id="@+id/t_counterStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="00:00"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/colorTextPrimary"
+        app:layout_constraintLeft_toLeftOf="@+id/seekbar"
+        app:layout_constraintTop_toBottomOf="@+id/v1"
+        android:fontFamily="@font/open_sans_regular"
+        android:textSize="14sp"/>
+
+    <TextView
+        android:id="@+id/t_counterEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="00:30"
+        android:layout_marginRight="10dp"
+        android:textColor="@color/colorTextPrimary"
+        app:layout_constraintRight_toRightOf="@+id/seekbar"
+        app:layout_constraintTop_toBottomOf="@+id/v1"
+        android:fontFamily="@font/open_sans_regular"
+        android:textSize="14sp"/>
+
+    <LinearLayout
+        android:id="@+id/linear"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintLeft_toLeftOf="@+id/t_counterStart"
+        app:layout_constraintRight_toRightOf="@+id/t_counterEnd"
+        app:layout_constraintBottom_toBottomOf="@+id/view">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/b_startRecord"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:text="Başlat"
+            android:layout_weight="1"
+            android:layout_marginRight="5dp"
+            android:onClick="clickStartButton"
+            android:textColor="@color/colorTextPrimary"
+            android:fontFamily="@font/open_sans_semi_bold"
+            android:background="@drawable/stroked_background"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/b_playRecord"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/stroked_background"
+            android:text="Play"
+            android:alpha="0.2"
+            android:layout_weight="1"
+            android:layout_marginLeft="5dp"
+            android:onClick="clickPlay"
+            android:textAllCaps="false"
+            android:textColor="@color/colorTextPrimary"
+            android:fontFamily="@font/open_sans_semi_bold"/>
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/b_camera"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="@id/view"
+        app:layout_constraintRight_toRightOf="@id/view"
+        app:layout_constraintTop_toBottomOf="@+id/view"
+        android:text="Fotoğraf çek"
+        android:textAllCaps="false"
+        android:visibility="gone"
+        android:background="@drawable/rounded_background"
+        android:backgroundTint="@color/colorTextSecondary"
+        android:fontFamily="@font/open_sans_bold"
+        android:textSize="14sp"
+        android:onClick="clickCameraButton"
+        android:layout_marginTop="10dp"/>
+
+    <ImageView
+        android:id="@+id/imageview"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="@+id/b_camera"
+        app:layout_constraintRight_toRightOf="@+id/b_camera"
+        app:layout_constraintTop_toBottomOf="@+id/b_camera"
+        app:layout_constraintBottom_toTopOf="@+id/b_ilerle"
+        android:layout_marginVertical="10dp"
+        android:scaleType="fitCenter"/>
+
+    <LinearLayout
+        android:id="@+id/view_photo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view"
+        android:background="@drawable/rounded_background"
+        android:layout_margin="20dp"
+        android:paddingVertical="20dp"
+        android:orientation="vertical"
+        android:backgroundTint="@color/colorGrayLight2">
+
+        <TextView
+            android:id="@+id/t_uploadYourImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="@id/view_photo"
+            app:layout_constraintRight_toRightOf="@id/view_photo"
+            android:text="Upload your image"
+            android:layout_gravity="center"
+            app:layout_constraintTop_toTopOf="@+id/view_photo"
+            android:fontFamily="@font/open_sans_bold"
+            android:textSize="16sp"
+            android:textColor="@color/colorTextPrimary"/>
+
+        <TextView
+            android:id="@+id/t_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PNG, JPG and GIF are allowed"
+            android:fontFamily="@font/open_sans_bold"
+            android:textColor="@color/colorTextPrimary"
+            android:alpha="0.6"
+            android:layout_gravity="center"
+            android:textSize="12sp"
+            app:layout_constraintTop_toBottomOf="@+id/t_uploadYourImage"
+            app:layout_constraintLeft_toLeftOf="@id/view_photo"
+            app:layout_constraintRight_toRightOf="@+id/view_photo"
+            android:layout_marginTop="5dp"/>
+
+        <LinearLayout
+            android:id="@+id/view_dragDropImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/stroked_dash"
+            android:paddingVertical="20dp"
+            android:orientation="vertical"
+            android:onClick="clickCameraButton"
+            android:layout_marginTop="20dp"
+            android:layout_marginHorizontal="15dp">
+
+            <ImageView
+                android:id="@+id/i_cloud"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_upload_cloud"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Drag and drop or browse to choose a file"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/open_sans_semi_bold"
+                android:textColor="#696D7A"
+                android:textSize="12sp"/>
+
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/c_done"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:visibility="gone"
+            android:layout_marginHorizontal="20dp">
+
+            <TextView
+                android:id="@+id/t_done"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="Done!"
+                android:fontFamily="@font/open_sans_semi_bold"
+                android:textColor="#696D7A"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="Share"
+                android:fontFamily="@font/open_sans_semi_bold"
+                android:textColor="#696D7A"/>
+
+            <View
+                android:id="@+id/view_white"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/t_done"
+                android:background="@drawable/rounded_background"
+                android:backgroundTint="@color/white"
+                android:layout_marginTop="5dp"/>
+
+            <ImageView
+                android:id="@+id/i_png"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_file_format_png"
+                android:layout_marginLeft="10dp"
+                app:layout_constraintLeft_toLeftOf="@+id/view_white"
+                app:layout_constraintTop_toTopOf="@+id/view_white"
+                app:layout_constraintBottom_toBottomOf="@id/view_white"/>
+
+            <TextView
+                android:id="@+id/t_fileName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Image.png"
+                app:layout_constraintLeft_toRightOf="@+id/i_png"
+                app:layout_constraintTop_toTopOf="@+id/i_png"
+                android:textSize="12sp"
+                android:fontFamily="@font/open_sans_bold"
+                android:textColor="@color/colorTextPrimary2"
+                android:layout_marginLeft="10dp"/>
+
+            <TextView
+                android:id="@+id/t_size"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toRightOf="@+id/i_png"
+                app:layout_constraintTop_toBottomOf="@+id/t_fileName"
+                android:text="300 Kb"
+                android:textSize="10sp"
+                android:textColor="#9ca4af"
+                android:fontFamily="@font/open_sans_bold"
+                android:layout_marginLeft="10dp"/>
+
+            <ImageView
+                android:id="@+id/i_close"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:onClick="clickRemoveImage"
+                app:layout_constraintRight_toRightOf="@+id/view_white"
+                app:layout_constraintTop_toTopOf="@+id/view_white"
+                app:layout_constraintBottom_toBottomOf="@+id/view_white"
+                android:src="@drawable/ic_cancel"
+                android:layout_marginRight="10dp"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/b_ilerle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="@id/view"
+        app:layout_constraintRight_toRightOf="@id/view"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/rounded_background"
+        android:backgroundTint="@color/colorRedLight"
+        android:text="Gönder"
+        android:onClick="clickNext"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:fontFamily="@font/open_sans_semi_bold"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

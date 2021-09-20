@@ -1,3 +1,26 @@
 <resources>
-    <string name="app_name">YourVoice</string>
+    <string name="app_name">Your Voice</string>
+    <string name="map_id" translatable="false">5538876271895e4d</string>
+    <string name="main_page_title">Your Voice</string>
+
+    <!-- ActivityLogin Page -->
+    <string name="ActivityLogin_sign_in">Sign In</string>
+    <string name="ActivityLogin_sign_in_button">SIGN IN</string>
+    <string name="ActivityLogin_welcome_back">Welcome back!</string>
+    <string name="ActivityLogin_username">Username</string>
+    <string name="ActivityLogin_password">Password</string>
+    <string name="ActivityLogin_or">or</string>
+    <string name="ActivityLogin_sign_up">Sign up</string>
+    <string name="ActivityLogin_forgot_password">Forgot password?</string>
+
+    <!-- ActivityRegister Page -->
+    <string name="ActivityRegister_sign_up">Sign Up</string>
+    <string name="ActivityRegister_sign_up_button">SIGN UP</string>
+    <string name="ActivityRegister_welcome_back">Nice to meet you!</string>
+    <string name="ActivityRegister_username">Username</string>
+    <string name="ActivityRegister_password">Password</string>
+    <string name="ActivityRegister_password_confirm">Password Confirm</string>
+    <string name="ActivityRegister_or">or</string>
+    <string name="ActivityRegister_sign_in">Sign in</string>
+
 </resources>
