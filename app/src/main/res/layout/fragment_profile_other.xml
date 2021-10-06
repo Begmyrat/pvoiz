@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.FragmentProfileOther">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cons_top"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/cardview"
+        app:layout_constraintLeft_toLeftOf="@+id/cardview"
+        app:layout_constraintRight_toRightOf="@+id/cardview"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.110000014">
+
+        <TextView
+            android:id="@+id/t_username"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/quicksand_semi_bold"
+            android:text="Liz Tyler"
+            android:textColor="@color/firsttextcolor"
+            android:textSize="20sp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/cardview_avatar"
+            app:layout_constraintTop_toTopOf="@+id/cardview_avatar" />
+
+        <TextView
+            android:id="@+id/t_add"
+            android:layout_width="wrap_content"
+            android:layout_height="33dp"
+            android:text="Takip et"
+            android:paddingHorizontal="50dp"
+            android:background="@drawable/add_button_background_stroke"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/quicksand_semi_bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/t_username"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardview_avatar"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            app:cardCornerRadius="50dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/i_avatar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/avatar_temp" />
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="25dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/l_history"
+        app:layout_constraintTop_toBottomOf="@+id/cons_top">
+
+        <ImageView
+            android:id="@+id/i_rectangleBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/photo_temp"
+            android:scaleType="centerCrop"
+            />
+
+    </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:id="@+id/i_location_icon_white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="2dp"
+        android:src="@drawable/location_icon_white"
+        app:layout_constraintBottom_toBottomOf="@+id/cardview"
+        app:layout_constraintHorizontal_bias="0.06"
+        app:layout_constraintLeft_toLeftOf="@+id/cardview"
+        app:layout_constraintRight_toRightOf="@+id/cardview"
+        app:layout_constraintTop_toTopOf="@+id/cardview"
+        app:layout_constraintVertical_bias="0.68" />
+
+    <TextView
+        android:id="@+id/t_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@+id/i_location_icon_white"
+        app:layout_constraintTop_toTopOf="@+id/i_location_icon_white"
+        app:layout_constraintBottom_toBottomOf="@+id/i_location_icon_white"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:elevation="2dp"
+        android:shadowColor="#C5991D"
+        android:shadowRadius="5"
+        android:shadowDx="1"
+        android:layout_marginLeft="3dp"
+        android:shadowDy="1"
+        android:fontFamily="@font/quicksand_bold"
+        android:text="Ankara, TURKEY"/>
+
+    <ImageView
+        android:id="@+id/i_bottom_gradient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="2dp"
+        app:layout_constraintLeft_toLeftOf="@+id/cardview"
+        app:layout_constraintRight_toRightOf="@+id/cardview"
+        app:layout_constraintBottom_toBottomOf="@+id/cardview"
+        android:src="@drawable/bottom_gradient"/>
+
+    <TextView
+        android:id="@+id/t_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="2 h ago"
+        android:elevation="2dp"
+        android:textColor="@color/white"
+        app:layout_constraintRight_toRightOf="@+id/cardview"
+        app:layout_constraintTop_toTopOf="@+id/cardview"/>
+
+    <ImageView
+        android:id="@+id/i_play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="2dp"
+        app:layout_constraintLeft_toLeftOf="@+id/cardview"
+        app:layout_constraintRight_toRightOf="@+id/cardview"
+        app:layout_constraintBottom_toBottomOf="@+id/cardview"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/play"/>
+
+    <ImageView
+        android:id="@+id/i_reply"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/reply"
+        android:scaleType="center"
+        android:elevation="2dp"
+        app:layout_constraintLeft_toRightOf="@+id/i_trash"
+        app:layout_constraintRight_toLeftOf="@+id/i_play"
+        app:layout_constraintTop_toTopOf="@+id/i_play"
+        app:layout_constraintBottom_toBottomOf="@+id/i_play"/>
+
+    <TextView
+        android:id="@+id/t_reply"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="@+id/i_reply"
+        app:layout_constraintRight_toRightOf="@+id/i_reply"
+        app:layout_constraintTop_toBottomOf="@+id/i_reply"
+        android:text="Reply"
+        android:elevation="2dp"
+        android:shadowDy="1"
+        android:shadowDx="1"
+        android:shadowRadius="5"
+        android:shadowColor="#C5991D"
+        android:fontFamily="@font/quicksand_regular"
+        android:textSize="9sp"
+        android:textColor="@color/white"/>
+
+    <ImageView
+        android:id="@+id/i_trash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/blockpassive"
+        android:scaleType="center"
+        android:elevation="2dp"
+        app:layout_constraintLeft_toLeftOf="@+id/cardview"
+        app:layout_constraintTop_toTopOf="@+id/i_reply"
+        app:layout_constraintBottom_toBottomOf="@+id/i_reply"
+        app:layout_constraintRight_toLeftOf="@+id/i_reply"/>
+
+    <TextView
+        android:id="@+id/t_trash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="@+id/i_trash"
+        app:layout_constraintRight_toRightOf="@+id/i_trash"
+        app:layout_constraintBottom_toBottomOf="@+id/t_reply"
+        android:text="Block"
+        android:shadowDy="1"
+        android:shadowDx="1"
+        android:elevation="2dp"
+        android:shadowRadius="5"
+        android:shadowColor="#C5991D"
+        android:fontFamily="@font/quicksand_regular"
+        android:textSize="9sp"
+        android:textColor="@color/white"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cons_like"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="2dp"
+        app:layout_constraintLeft_toRightOf="@+id/i_play"
+        app:layout_constraintRight_toLeftOf="@+id/cons_view"
+        app:layout_constraintBottom_toBottomOf="@+id/i_trash"
+        app:layout_constraintTop_toTopOf="@+id/i_trash">
+
+        <ImageView
+            android:id="@+id/i_like"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/like"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+            android:id="@+id/t_likeNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="150"
+            android:shadowDy="1"
+            android:shadowDx="1"
+            android:shadowRadius="5"
+            android:shadowColor="#C5991D"
+            app:layout_constraintLeft_toRightOf="@+id/i_like"
+            app:layout_constraintTop_toTopOf="@+id/i_like"
+            app:layout_constraintBottom_toBottomOf="@+id/i_like"
+            android:layout_marginLeft="5dp"
+            android:fontFamily="@font/quicksand_semi_bold"
+            android:textColor="@color/white"
+            android:textSize="13sp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cons_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="2dp"
+        app:layout_constraintRight_toRightOf="@id/cardview"
+        app:layout_constraintLeft_toRightOf="@+id/cons_like"
+        app:layout_constraintTop_toTopOf="@+id/cons_like"
+        app:layout_constraintBottom_toBottomOf="@+id/cons_like">
+
+        <TextView
+            android:id="@+id/t_viewTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="view"
+            android:fontFamily="@font/quicksand_semi_bold"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/t_viewNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="123"
+            android:shadowDy="1"
+            android:shadowDx="1"
+            android:layout_marginLeft="5dp"
+            android:shadowRadius="5"
+            android:shadowColor="#C5991D"
+            android:fontFamily="@font/quicksand_semi_bold"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            app:layout_constraintLeft_toRightOf="@+id/t_viewTitle"
+            app:layout_constraintTop_toTopOf="@+id/t_viewTitle"
+            app:layout_constraintBottom_toBottomOf="@+id/t_viewTitle"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/l_history"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:elevation="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@+id/cardview"
+        app:layout_constraintRight_toRightOf="@+id/cardview"
+        app:layout_constraintTop_toBottomOf="@+id/cardview">
+
+        <TextView
+            android:id="@+id/t_history"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/quicksand_semi_bold"
+            android:text="@string/FragmentMe_history"
+            android:textColor="@color/firsttextcolor"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/t_showOnMaps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/quicksand_regular"
+            android:text="@string/FragmentMe_show_on_maps"
+            android:textColor="@color/secondtextcolor"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/t_history"
+            app:layout_constraintBottom_toBottomOf="@+id/t_history"
+            android:textSize="16sp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview_history"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/t_history"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

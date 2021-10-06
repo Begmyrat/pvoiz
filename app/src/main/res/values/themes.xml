@@ -24,7 +24,7 @@
     <!--    </style>-->
 
     <style name="AppModalStyle" parent="Widget.Design.BottomSheet.Modal">
-        <item name="android:background">@drawable/rounded_top_background</item>
+        <item name="android:background">@drawable/rounded_top_30</item>
     </style>
 
     <style name="OutlinedRoundedBox" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
@@ -40,5 +40,13 @@
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowFullscreen">true</item>
     </style>
+
+    <style name="AlertDialogCustom" parent="@android:style/Theme.Dialog">
+        <item name="android:radius">25dp</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="backgroundColor">@android:color/transparent</item>
+        <item name="background">@drawable/rounded_background_25</item>
+    </style>
+
 
 </resources>

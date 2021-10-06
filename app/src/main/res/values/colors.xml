@@ -20,11 +20,17 @@
     <color name="colorRed">#ee422e</color>
     <color name="colorRedLight">#f77867</color>
 
+    <color name="colorFragmentSocialBackground">#f6f6f6</color>
     <color name="firsttextcolor">#000000</color>
     <color name="secondtextcolor">#969595</color>
+    <color name="thirdtextcolor">#515151</color>
     <color name="textwhite">#FFFFFF</color>
     <color name="textyellow">#FFC613</color>
     <color name="icon">#515151</color>
+    <color name="iconfill1">#E5E5E5</color>
+    <color name="textstroke">#C5991D</color>
+    <color name="thirdtext">#FFC613</color>
+
 
 
 

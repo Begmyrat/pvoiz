@@ -9,6 +9,8 @@ public class ServerResponse {
     boolean success;
     @SerializedName("message")
     String message;
+    @SerializedName("user_id")
+    String user_id;
 
     VoiceObject[] pro;
 
@@ -37,5 +39,13 @@ public class ServerResponse {
 
     public void setMessage(String message) {
         this.message = message;
+    }
+
+    public String getUser_id() {
+        return user_id;
+    }
+
+    public void setUser_id(String user_id) {
+        this.user_id = user_id;
     }
 }

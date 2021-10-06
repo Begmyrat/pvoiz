@@ -9,11 +9,14 @@ import android.media.MediaPlayer;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.mobiloby.voiceofusers.R;
 import com.mobiloby.voiceofusers.models.VoiceObject;
 
@@ -22,7 +25,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-public class MyRecordListAdapter extends RecyclerView.Adapter<MyRecordListAdapter.ViewHolder> implements MediaPlayer.OnCompletionListener {
+public class MyRecordListAdapter extends RecyclerView.Adapter<MyRecordListAdapter.ViewHolder>{
 
     private List<VoiceObject> list;
     private LayoutInflater mInflater;
@@ -36,8 +39,6 @@ public class MyRecordListAdapter extends RecyclerView.Adapter<MyRecordListAdapte
         this.context = context;
         this.mInflater = LayoutInflater.from(context);
         this.list = list;
-        getAddress(context);
-        mediaPlayer.setOnCompletionListener(this);
         
     }
 
@@ -60,17 +61,22 @@ public class MyRecordListAdapter extends RecyclerView.Adapter<MyRecordListAdapte
 
         VoiceObject m = list.get(position);
 
+        holder.t_username.setText(m.getUser_name());
+        holder.t_time.setText(m.getItem_date());
 
-        holder.t_title.setText(m.getFull_address());
-        holder.t_subtitle.setText(""+m.getItem_date());
         if(selectedIndex == position){
-            holder.t_play.setBackgroundTintList(ColorStateList.valueOf(context.getResources().getColor(R.color.colorGreen1)));
-            holder.t_play.setText("Durdur");
+            holder.i_play.setImageResource(R.drawable.pause);
         }
         else{
-            holder.t_play.setBackgroundTintList(ColorStateList.valueOf(context.getResources().getColor(R.color.colorRedLight)));
-            holder.t_play.setText("Dinle");
+            holder.i_play.setImageResource(R.drawable.play_bottom);
         }
+
+        Glide
+                .with(context)
+                .load("https://mobiloby.com/_pvoiz/upload/photo/"+m.getUser_image_url())
+                .placeholder(R.drawable.voizlogo_record)
+                .circleCrop()
+                .into(holder.i_avatar);
     }
 
     public void updateData(ArrayList<VoiceObject> list){
@@ -84,26 +90,22 @@ public class MyRecordListAdapter extends RecyclerView.Adapter<MyRecordListAdapte
         return list.size();
     }
 
-    @Override
-    public void onCompletion(MediaPlayer mp) {
-        stopPlaying();
-        selectedIndex = -1;
-        notifyDataSetChanged();
-    }
-
     // stores and recycles views as they are scrolled off screen
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        TextView t_title, t_subtitle, t_play;
+        TextView t_username, t_time;
+        ImageView i_play, i_reply, i_avatar;
 
         ViewHolder(View itemView) {
             super(itemView);
 
-            t_title = itemView.findViewById(R.id.t_title);
-            t_subtitle = itemView.findViewById(R.id.t_subtitle);
-            t_play = itemView.findViewById(R.id.t_play);
+            t_username = itemView.findViewById(R.id.t_username);
+            t_time = itemView.findViewById(R.id.t_time);
+            i_play = itemView.findViewById(R.id.i_playBottom);
+            i_reply = itemView.findViewById(R.id.i_replyBottom);
+            i_avatar = itemView.findViewById(R.id.i_avatar);
 
-            t_play.setOnClickListener(new View.OnClickListener() {
+            i_play.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
 //                    playAudio(list.get(getAdapterPosition()).getItem_url());
@@ -116,8 +118,15 @@ public class MyRecordListAdapter extends RecyclerView.Adapter<MyRecordListAdapte
                         selectedIndex = getAdapterPosition();
                         notifyDataSetChanged();
                         stopPlaying();
-                        playAudio(list.get(selectedIndex).getItem_record_url());
+                        playAudio(list.get(selectedIndex).getItem_record_url(), i_play);
                     }
+                }
+            });
+
+            i_reply.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(context, "reply pos: " + getAdapterPosition(), Toast.LENGTH_SHORT).show();
                 }
             });
 
@@ -145,12 +154,21 @@ public class MyRecordListAdapter extends RecyclerView.Adapter<MyRecordListAdapte
         void onItemClick(View view, int position, List<VoiceObject> list);
     }
 
-    private void playAudio(String url) {
+    private void playAudio(String url, ImageView i_play) {
 
-        String audioUrl = url;
+        url = "https://mobiloby.com/_pvoiz/upload/music/"+url;
 
         // initializing media player
         mediaPlayer = new MediaPlayer();
+
+        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                i_play.setImageResource(R.drawable.play);
+                selectedIndex = -1;
+                Toast.makeText(context, "bitti", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         // below line is use to set the audio
         // stream type for our media player.
@@ -193,41 +211,6 @@ public class MyRecordListAdapter extends RecyclerView.Adapter<MyRecordListAdapte
 //            Toast.makeText(context, "Audio has not played", Toast.LENGTH_SHORT).show();
         }
     }
-
-    public void getAddress(Context context) {
-
-        for(int i=0;i<list.size();i++){
-            VoiceObject voiceObject = list.get(i);
-
-            try {
-                Geocoder geocoder = new Geocoder(context, Locale.getDefault());
-                List<Address> addresses = geocoder.getFromLocation(Double.parseDouble(voiceObject.getItem_lat()), Double.parseDouble(voiceObject.getItem_long()), 1);
-                if (addresses != null && addresses.size() > 0) {
-
-
-
-                    String address = addresses.get(0).getAddressLine(0); // If any additional address line present than only, check with max available address lines by getMaxAddressLineIndex()
-                    String city = addresses.get(0).getLocality();
-                    String state = addresses.get(0).getAdminArea();
-                    String country = addresses.get(0).getCountryName();
-                    String belediye = addresses.get(0).getSubAdminArea();
-                    String postalCode = addresses.get(0).getPostalCode();
-                    String knownName = addresses.get(0).getFeatureName(); // Only if available else return NULL
-
-                    list.get(i).setFull_address(""+belediye + ", " + state + ", " + country + ".");
-
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-
-
-
-
-    }
-
-
 
 }
 

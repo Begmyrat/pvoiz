@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.FragmentHome">
+
+    <fragment
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/map"
+        tools:context=".MapsActivity"
+        android:name="com.google.android.gms.maps.SupportMapFragment" />
+
+
+    <ImageView
+        android:id="@+id/i_allOrPrivate"
+        android:layout_width="90dp"
+        android:layout_height="35dp"
+        android:src="@drawable/all_or_private"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.06"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.05" />
+
+    <ImageView
+        android:id="@+id/i_searchBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/search_box"
+        android:layout_marginTop="10dp"
+        app:layout_constraintLeft_toLeftOf="@+id/i_allOrPrivate"
+        app:layout_constraintTop_toBottomOf="@+id/i_allOrPrivate"/>
+
+    <ImageView
+        android:id="@+id/i_loupe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/loupe"
+        app:layout_constraintBottom_toBottomOf="@id/i_searchBox"
+        app:layout_constraintHorizontal_bias="0.06"
+        app:layout_constraintLeft_toLeftOf="@id/i_searchBox"
+        app:layout_constraintRight_toRightOf="@+id/i_searchBox"
+        app:layout_constraintTop_toTopOf="@id/i_searchBox"
+        app:layout_constraintVertical_bias="0.4" />
+
+    <EditText
+        android:id="@+id/e_search"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        app:layout_constraintVertical_bias="0.4"
+        android:hint="@string/search_box_hint"
+        android:textSize="14sp"
+        android:inputType="text"
+        android:imeOptions="actionSearch"
+        android:background="@android:color/transparent"
+        android:fontFamily="@font/quicksand_regular"
+        android:textColor="@color/secondtextcolor"
+        android:textColorHint="@color/secondtextcolor"
+        app:layout_constraintLeft_toRightOf="@+id/i_loupe"
+        app:layout_constraintTop_toTopOf="@+id/i_searchBox"
+        app:layout_constraintBottom_toBottomOf="@+id/i_searchBox"
+        app:layout_constraintRight_toRightOf="@+id/i_searchBox"/>
+
+
+    <ImageView
+        android:id="@+id/i_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/crosshair"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.954"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/i_searchBox"
+        app:layout_constraintVertical_bias="0.821" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

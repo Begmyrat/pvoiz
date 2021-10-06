@@ -10,8 +10,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.view.View;
-import android.widget.ImageView;
-import android.widget.VideoView;
 
 import com.mobiloby.voiceofusers.R;
 
@@ -44,7 +42,7 @@ public class ActivitySplash extends AppCompatActivity {
                     startActivity(intent);
                     finish();
                 } else {
-                    Intent intent = new Intent(getApplicationContext(), ActivityLogin.class);
+                    Intent intent = new Intent(getApplicationContext(), ActivityLoginPhone.class);
                     startActivity(intent);
                     finish();
                 }

@@ -628,13 +628,6 @@ public class ActivityNewRecord extends AppCompatActivity {
         MultipartBody.Part fileToUpload2 = MultipartBody.Part.createFormData("file2", file2.getName(), requestBody2);
         RequestBody filename = RequestBody.create(MediaType.parse("text/plain"), fileName);
 
-        VoiceObject v = new VoiceObject();
-        v.setUser_id("1");
-        v.setIs_public("1");
-        v.setItem_lat("lat");
-        v.setItem_long("long");
-        v.setItem_record_url("item url");
-
         RetroInterface getResponse = ApiClient.getClient().create(RetroInterface.class);
         Call<ServerResponse> call = getResponse.uploadMulFile(fileToUpload1, fileToUpload2, "1", 1, lat, lon);
 
@@ -677,13 +670,6 @@ public class ActivityNewRecord extends AppCompatActivity {
 
         MultipartBody.Part fileToUpload1 = MultipartBody.Part.createFormData("file1", file1.getName(), requestBody1);
         RequestBody filename = RequestBody.create(MediaType.parse("text/plain"), fileName);
-
-        VoiceObject v = new VoiceObject();
-        v.setUser_id("1");
-        v.setIs_public("1");
-        v.setItem_lat("lat");
-        v.setItem_long("long");
-        v.setItem_record_url("item url");
 
         RetroInterface getResponse = ApiClient.getClient().create(RetroInterface.class);
         Call<ServerResponse> call = getResponse.uploadSingleFile(fileToUpload1, "1", 1, lat, lon);

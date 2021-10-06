@@ -6,7 +6,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiClient {
     private static Retrofit retrofit = null;
-    private static String BASE_URL = "https://mobiloby.com/_filter/";
+    private static String BASE_URL = "https://mobiloby.com/_pvoiz/";
 
     public static Retrofit getClient(){
         if(retrofit == null){

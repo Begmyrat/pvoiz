@@ -3,14 +3,31 @@
     <string name="app_name">Your Voice</string>
     <string name="main_page_title">Senin Sesin</string>
 
+    <!-- Menu item texts-->
+    <string name="menu1">Ana Sayfa</string>
+    <string name="menu2">Sosyal</string>
+    <string name="menu3">Beğeniler</string>
+    <string name="menu4">Ben</string>
+
+    <!-- HINTS -->
+    <string name="search_box_hint">Konum arayınız</string>
+
     <!-- ActivityLogin Page -->
     <string name="ActivityLogin_sign_in">Giriş</string>
+    <string name="ActivityLogin_verification_code">Onay Kodu</string>
     <string name="ActivityLogin_sign_in_button">GİRİŞ</string>
     <string name="ActivityLogin_welcome_back">Hoş geldiniz!</string>
+    <string name="ActivityLogin_enter_username">Kullanıcı adınızı giriniz!</string>
+    <string name="ActivityLogin_choose_avatar">Profil resmi seçiniz</string>
+    <string name="ActivityLogin_enter_verification">Onay kodunu giriniz!</string>
+    <string name="ActivityLogin_edit_profile_image">Profil resmi değiştir</string>
     <string name="ActivityLogin_username">Kullanıcı adı</string>
+    <string name="ActivityLogin_avatar">Profil Resim</string>
+    <string name="ActivityLogin_phone">Telefon numaranız</string>
     <string name="ActivityLogin_password">Şifre</string>
     <string name="ActivityLogin_or">ya da</string>
     <string name="ActivityLogin_sign_up">Kayıt ol</string>
+    <string name="ActivityLogin_do_this_later">Sonradan değiştir</string>
     <string name="ActivityLogin_forgot_password">Şifreni unuttun?</string>
 
     <!-- ActivityRegister Page -->
@@ -22,5 +39,40 @@
     <string name="ActivityRegister_password_confirm">Şifre tekrarı</string>
     <string name="ActivityRegister_or">ya da</string>
     <string name="ActivityRegister_sign_in">Giriş</string>
+
+    <!-- FragmentMe -->
+    <string name="FragmentMe_hello">Merhaba</string>
+    <string name="FragmentMe_view">izlenme</string>
+    <string name="FragmentMe_history">Geçmiş</string>
+    <string name="FragmentMe_show_on_maps">Haritada göster</string>
+    <string name="FragmentMe_only_friends">Sadece arkadaşlar</string>
+    <string name="FragmentMe_only_all">Hepsi</string>
+    <string name="FragmentMe_hour">s</string>
+    <string name="FragmentMe_minute">d</string>
+    <string name="FragmentMe_second">s</string>
+    <string name="FragmentMe_ago">önce</string>
+
+    <!-- FragmentProfile -->
+    <string name="FragmentProfile_option_private">Gizli</string>
+    <string name="FragmentProfile_option_friends">Sadece Arkadaşlar</string>
+    <string name="FragmentProfile_option_all">Herkes</string>
+
+    <!-- FragmentSocial -->
+    <string name="FragmentSocial_social">Sosyal</string>
+    <string name="FragmentSocial_search_user">Ara</string>
+    <string name="FragmentSocial_friends">Arkadaşlar</string>
+    <string name="FragmentSocial_Replies">Yanıtlar</string>
+
+    <!-- ActivityNewRecordStep2 -->
+    <string name="ActivityNewRecordStep2_add_new_picture">Yeni resim ekle</string>
+
+    <!--  Button words-->
+    <string name="button_continue">Devam et</string>
+    <string name="button_follow">Takip et</string>
+    <string name="button_following">Takiptesin</string>
+
+    <!-- Response messages -->
+    <string name="message_try_again">Tekrar deneyiniz</string>
+    <string name="message_error_password">Güvenlik kodu hatası. Tekrar deneyiniz!</string>
 
 </resources>

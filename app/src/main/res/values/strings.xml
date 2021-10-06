@@ -3,14 +3,31 @@
     <string name="map_id" translatable="false">5538876271895e4d</string>
     <string name="main_page_title">Your Voice</string>
 
+    <!-- Menu item texts-->
+    <string name="menu1">Home</string>
+    <string name="menu2">Social</string>
+    <string name="menu3">Likes</string>
+    <string name="menu4">Me</string>
+
+    <!-- HINTS -->
+    <string name="search_box_hint">Search location</string>
+
     <!-- ActivityLogin Page -->
     <string name="ActivityLogin_sign_in">Sign In</string>
+    <string name="ActivityLogin_verification_code">Verification Code</string>
     <string name="ActivityLogin_sign_in_button">SIGN IN</string>
     <string name="ActivityLogin_welcome_back">Welcome back!</string>
+    <string name="ActivityLogin_enter_username">Enter your username!</string>
+    <string name="ActivityLogin_choose_avatar">Choose an image for your profile</string>
+    <string name="ActivityLogin_edit_profile_image">Edit profile image</string>
+    <string name="ActivityLogin_enter_verification">Enter your verification code!</string>
     <string name="ActivityLogin_username">Username</string>
+    <string name="ActivityLogin_avatar">Profile Photo</string>
+    <string name="ActivityLogin_phone">Phone number</string>
     <string name="ActivityLogin_password">Password</string>
     <string name="ActivityLogin_or">or</string>
     <string name="ActivityLogin_sign_up">Sign up</string>
+    <string name="ActivityLogin_do_this_later">Do this later</string>
     <string name="ActivityLogin_forgot_password">Forgot password?</string>
 
     <!-- ActivityRegister Page -->
@@ -22,5 +39,43 @@
     <string name="ActivityRegister_password_confirm">Password Confirm</string>
     <string name="ActivityRegister_or">or</string>
     <string name="ActivityRegister_sign_in">Sign in</string>
+
+    <!-- FragmentMe -->
+    <string name="FragmentMe_hello">Hello</string>
+    <string name="FragmentMe_view">view</string>
+    <string name="FragmentMe_history">History</string>
+    <string name="FragmentMe_show_on_maps">Show on map</string>
+    <string name="FragmentMe_only_friends">Only friends</string>
+    <string name="FragmentMe_only_all">All</string>
+    <string name="FragmentMe_hour">h</string>
+    <string name="FragmentMe_minute">m</string>
+    <string name="FragmentMe_second">s</string>
+    <string name="FragmentMe_ago">ago</string>
+
+    <!-- FragmentProfile -->
+    <string name="FragmentProfile_option_private">Private</string>
+    <string name="FragmentProfile_option_friends">Only Friends</string>
+    <string name="FragmentProfile_option_all">All</string>
+
+    <!-- FragmentSocial -->
+    <string name="FragmentSocial_social">Social</string>
+    <string name="FragmentSocial_search_user">Search user</string>
+    <string name="FragmentSocial_friends">Friends</string>
+    <string name="FragmentSocial_Replies">Replies</string>
+
+    <!-- ActivityNewRecordStep2 -->
+    <string name="ActivityNewRecordStep2_add_new_picture">Add new picture</string>
+
+    <!--  Button words-->
+    <string name="button_continue">Continue</string>
+    <string name="button_follow">Follow</string>
+    <string name="button_following">Following</string>
+
+    <!-- Response messages -->
+    <string name="message_try_again">Try again</string>
+    <string name="message_error_password">Verification Code is not correct. Try again!</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 
 </resources>

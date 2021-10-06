@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#e5e5e5"
+    tools:context=".activities.ActivityNewRecordStep2">
+
+    <ImageView
+        android:id="@+id/i_recordPhotoTemp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/record_photo_temp"
+        android:scaleType="centerCrop"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ImageView
+        android:id="@+id/i_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/close"
+        android:layout_margin="20dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ImageView
+        android:id="@+id/i_camIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/camicon"
+        app:layout_constraintBottom_toBottomOf="@+id/i_recordPhotoTemp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.35000002" />
+
+    <TextView
+        android:id="@+id/t_addNewPicture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ActivityNewRecordStep2_add_new_picture"
+        android:textColor="@color/white"
+        android:shadowColor="@color/textstroke"
+        android:shadowRadius="3"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:fontFamily="@font/quicksand_bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/i_camIcon"
+        android:layout_marginTop="10dp"/>
+
+    <ImageView
+        android:id="@+id/i_logo"
+        android:layout_width="81dp"
+        android:layout_height="81dp"
+        android:src="@drawable/logovoiz_mini"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:scaleType="fitXY"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/i_recordPhotoTemp"
+        app:layout_constraintBottom_toBottomOf="@+id/i_recordPhotoTemp"/>
+
+    <LinearLayout
+        android:id="@+id/l_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/i_logo">
+
+        <ImageView
+            android:id="@+id/i_locationIcon"
+            android:layout_width="13dp"
+            android:layout_height="17dp"
+            android:layout_gravity="center_vertical"
+            android:scaleType="centerCrop"
+            android:src="@drawable/history_location_icon" />
+
+        <TextView
+            android:id="@+id/t_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:fontFamily="@font/quicksand_semi_bold"
+            android:text="Location, LOCATION"
+            android:textColor="@color/secondtextcolor"
+            android:textSize="13sp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/t_counterStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="00:00"
+        android:fontFamily="@font/quicksand_regular"
+        android:textSize="11sp"
+        android:textColor="@color/firsttextcolor"
+        app:layout_constraintLeft_toLeftOf="@+id/seekbar"
+        app:layout_constraintBottom_toTopOf="@+id/seekbar"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="12dp"/>
+
+    <TextView
+        android:id="@+id/t_counterEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="00:00"
+        android:fontFamily="@font/quicksand_regular"
+        android:textSize="11sp"
+        android:textColor="@color/firsttextcolor"
+        app:layout_constraintRight_toRightOf="@+id/seekbar"
+        app:layout_constraintBottom_toTopOf="@+id/seekbar"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="12dp"/>
+
+    <SeekBar
+        android:id="@+id/seekbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:progress="0"
+        android:splitTrack="false"
+        android:progressBackgroundTint="#969595"
+        android:progressTint="#FFC613"
+        android:thumbTint="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/l_location"
+        app:layout_constraintVertical_bias="0.19999999" />
+
+    <ImageView
+        android:id="@+id/i_play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/play"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seekbar"
+        app:layout_constraintVertical_bias="0.72" />
+
+    <ImageView
+        android:id="@+id/i_trashCircle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/trash_circle"
+        app:layout_constraintBottom_toBottomOf="@+id/i_play"
+        app:layout_constraintHorizontal_bias="0.35"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/i_play"
+        app:layout_constraintTop_toTopOf="@+id/i_play" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cons_deleteOptions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:alpha="0"
+        app:layout_constraintRight_toRightOf="@+id/i_trashCircle"
+        app:layout_constraintLeft_toLeftOf="@+id/i_trashCircle"
+        app:layout_constraintBottom_toTopOf="@+id/i_trashCircle">
+
+        <TextView
+            android:id="@+id/t_kaydiSil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="Kaydı Sil"
+            android:fontFamily="@font/quicksand_regular"
+            android:textSize="11sp"
+            android:textColor="@color/secondtextcolor"/>
+
+        <TextView
+            android:id="@+id/t_vazgec"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vazgeç"
+            android:layout_marginTop="20dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/t_kaydiSil"
+            android:fontFamily="@font/quicksand_regular"
+            android:textSize="11sp"
+            android:textColor="@color/secondtextcolor"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/i_nextIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/next_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/i_play"
+        app:layout_constraintHorizontal_bias="0.65"
+        app:layout_constraintLeft_toRightOf="@+id/i_play"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/i_play" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cons_options"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="0"
+        app:layout_constraintRight_toRightOf="@+id/i_nextIcon"
+        app:layout_constraintBottom_toTopOf="@+id/i_nextIcon">
+
+        <ImageView
+            android:id="@+id/i_optionsRectangle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/options_rectangle"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <ImageView
+            android:id="@+id/i_publicIcon"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/public_icon"
+            app:layout_constraintLeft_toLeftOf="@+id/i_optionsRectangle"
+            app:layout_constraintRight_toRightOf="@+id/i_optionsRectangle"
+            app:layout_constraintTop_toTopOf="@+id/i_optionsRectangle"
+            app:layout_constraintBottom_toTopOf="@+id/i_friendsIcon"/>
+
+        <ImageView
+            android:id="@+id/i_friendsIcon"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/friends_icon"
+            app:layout_constraintBottom_toTopOf="@+id/i_privateIcon"
+            app:layout_constraintLeft_toLeftOf="@+id/i_optionsRectangle"
+            app:layout_constraintRight_toRightOf="@+id/i_optionsRectangle"
+            app:layout_constraintTop_toBottomOf="@+id/i_publicIcon"/>
+
+        <ImageView
+            android:id="@+id/i_privateIcon"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/lock"
+            app:layout_constraintLeft_toLeftOf="@+id/i_optionsRectangle"
+            app:layout_constraintRight_toRightOf="@+id/i_optionsRectangle"
+            app:layout_constraintTop_toBottomOf="@+id/i_friendsIcon"
+            app:layout_constraintBottom_toBottomOf="@+id/i_optionsRectangle"/>
+
+        <TextView
+            android:id="@+id/t_public"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Public"
+            android:textSize="11sp"
+            android:fontFamily="@font/quicksand_regular"
+            android:textColor="@color/secondtextcolor"
+            android:layout_marginRight="10dp"
+            app:layout_constraintTop_toTopOf="@+id/i_publicIcon"
+            app:layout_constraintBottom_toBottomOf="@+id/i_publicIcon"
+            app:layout_constraintRight_toLeftOf="@+id/i_publicIcon"/>
+
+        <TextView
+            android:id="@+id/t_friends"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Only\nFriends"
+            android:textSize="11sp"
+            android:fontFamily="@font/quicksand_regular"
+            android:textColor="@color/secondtextcolor"
+            android:layout_marginRight="10dp"
+            app:layout_constraintTop_toTopOf="@+id/i_friendsIcon"
+            app:layout_constraintBottom_toBottomOf="@+id/i_friendsIcon"
+            app:layout_constraintRight_toLeftOf="@+id/i_friendsIcon"/>
+
+        <TextView
+            android:id="@+id/t_private"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Private"
+            android:textSize="11sp"
+            android:fontFamily="@font/quicksand_regular"
+            android:textColor="@color/secondtextcolor"
+            android:layout_marginRight="10dp"
+            app:layout_constraintTop_toTopOf="@+id/i_privateIcon"
+            app:layout_constraintBottom_toBottomOf="@+id/i_privateIcon"
+            app:layout_constraintRight_toLeftOf="@+id/i_privateIcon"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
